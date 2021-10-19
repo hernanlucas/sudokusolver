@@ -1,0 +1,5 @@
+export const ActionTypes = {
+    SET_SELECTED_CELL: "SET_SELECTED_CELL",
+    SET_BOARD: "SET_BOARD",
+    SET_BOARD_CELL: "SET_BOARD_CELL",
+}

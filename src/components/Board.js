@@ -5,7 +5,7 @@ const Board = () => {
 
     return (
         <div className="board">
-            {[...Array(bigCellsAmount)].map((elem, index) => <BigCell key={index}/>)}
+            {[...Array(bigCellsAmount)].map((elem, index) => <BigCell key={index} bigCellNumber={index}/>)}
         </div>
     )
 }

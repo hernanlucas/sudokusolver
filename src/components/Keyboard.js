@@ -5,10 +5,10 @@ const Keyboard = () => {
 
     return (
         <div className="keyboard">
-            {keys.map(keyName => (
-                <Key key={keyName} text={keyName} />
+            {keys.map(keyNumber => (
+                <Key key={keyNumber} number={keyNumber} />
             ))}
-            
+
         </div>
     )
 }

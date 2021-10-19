@@ -27,7 +27,7 @@ const Cell = ({ bigCellNumber, cellNumber }) => {
     const getNumber = () => {
         const row = getRow();
         const column = getColum();
-        return board[row][column] !== 0 ? board[row][column] : "X";
+        return board[row][column] !== 0 ? board[row][column] : "";
     }
 
     return (

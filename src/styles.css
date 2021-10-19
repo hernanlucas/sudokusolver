@@ -80,7 +80,9 @@ main{
 }
 
 .cellSelected{
-    color: red;
+    color: white;
+    background-color: #a86194;
+
 }
 
 .actions{

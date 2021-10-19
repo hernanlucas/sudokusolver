@@ -7,7 +7,10 @@ const Key = ({ number }) => {
     const cell = useSelector(state => state.selectedCell);
 
     const setCellNumber = () => {
-        dispatch(setBoardCell({number: number, selectedCell: cell}))
+        dispatch(setBoardCell({
+            number: number.toUpperCase() === "X" ? 0 : parseInt(number), 
+            selectedCell: cell
+        }));
     };
 
     return (

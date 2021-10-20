@@ -9,17 +9,12 @@ const SecondaryActions = () => {
 
     const handleSolveSelected = () => {
         let boardSolved = solveBoard();
-        console.log("selectedCell ", selectedCell);
-        console.log("boardSolved[selectedRow][selectedColumn] ", boardSolved[selectedRow][selectedColumn]);
-        console.log("boardsolved ", boardSolved);
-
         dispatch(
             setBoardCell({
                 number: boardSolved[selectedRow][selectedColumn],
                 selectedCell: selectedCell
             })
         );
-
     };
 
     const handleClearBoard = () => {
@@ -39,8 +34,6 @@ const SecondaryActions = () => {
 
     // TODO MEJORAR
     const solveBoard = () => {
-
-
         const clone = arr => {
             return arr.map(a => [...a]);
         };

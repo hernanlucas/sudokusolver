@@ -13,7 +13,11 @@ const BtnSolve = ({ text }) => {
 
     // TODO MEJORAR
     const solveBoard = () => {
-        let board = stateBoard;
+        const clone = arr => {
+            return arr.map(a => [...a]);
+        }
+
+        let board = clone(stateBoard);
         let solved = false;
 
         let check = (y, x, n) => {
@@ -40,10 +44,6 @@ const BtnSolve = ({ text }) => {
             }
 
             return true;
-        }
-
-        const clone = arr => {
-            return arr.map(a => [...a]);
         }
 
         const solve = () => {

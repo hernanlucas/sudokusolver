@@ -1,21 +1,21 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { setBoard } from '../redux/actions/boardActions';
+import { useSelector, useDispatch } from "react-redux";
+import PropTypes from "prop-types";
+import { setBoard } from "../redux/actions/boardActions";
 
 const BtnSolve = ({ text }) => {
-
     const stateBoard = useSelector(state => state.board);
     const dispatch = useDispatch();
 
     const handleSolveBtn = () => {
         let boardSolved = solveBoard();
         dispatch(setBoard(boardSolved));
-    }
+    };
 
     // TODO MEJORAR
     const solveBoard = () => {
         const clone = arr => {
             return arr.map(a => [...a]);
-        }
+        };
 
         let board = clone(stateBoard);
         let solved = false;
@@ -44,7 +44,7 @@ const BtnSolve = ({ text }) => {
             }
 
             return true;
-        }
+        };
 
         const solve = () => {
             for (let y = 0; y < 9; y++) {
@@ -60,10 +60,9 @@ const BtnSolve = ({ text }) => {
                                     board.map(row => {
                                         if (row.includes(0)) {
                                             solved = false;
-                                            return
+                                            return;
                                         }
                                     });
-
                                 }
                                 solve();
                                 if (solved === true) {
@@ -76,18 +75,22 @@ const BtnSolve = ({ text }) => {
                     }
                 }
             }
-        }
-
+        };
 
         let boardSolved = solve();
         if (solved) return boardSolved;
         else return stateBoard;
-    }
+    };
 
     return (
-        <button className="btn-solve" onClick={handleSolveBtn}>{text}</button>
+        <button className="btn-solve" onClick={handleSolveBtn}>
+            {text}
+        </button>
     );
-}
+};
 
+BtnSolve.propTypes = {
+    text: PropTypes.string
+}
 
 export default BtnSolve;

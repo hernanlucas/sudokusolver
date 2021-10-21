@@ -1,16 +1,18 @@
 import { useSelector, useDispatch } from "react-redux";
-import { setBoardCell } from '../redux/actions/boardActions';
+import Proptypes from "prop-types";
+import { setBoardCell } from "../redux/actions/boardActions";
 
 const Key = ({ number }) => {
-
     const dispatch = useDispatch();
     const cell = useSelector(state => state.selectedCell);
 
     const setCellNumber = () => {
-        dispatch(setBoardCell({
-            number: number.toUpperCase() === "X" ? 0 : parseInt(number), 
-            selectedCell: cell
-        }));
+        dispatch(
+            setBoardCell({
+                number: number.toUpperCase() === "X" ? 0 : parseInt(number),
+                selectedCell: cell
+            })
+        );
     };
 
     return (
@@ -18,6 +20,10 @@ const Key = ({ number }) => {
             {number}
         </button>
     );
+};
+
+Key.propTypes = {
+    number: Proptypes.string
 };
 
 export default Key;

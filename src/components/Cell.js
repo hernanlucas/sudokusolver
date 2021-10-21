@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import { setSelectedCell } from '../redux/actions/boardActions';
 
 const Cell = ({ bigCellNumber, cellNumber }) => {
@@ -36,5 +37,10 @@ const Cell = ({ bigCellNumber, cellNumber }) => {
         </div>
     );
 };
+
+Cell.propTypes = {
+    bigCellNumber: PropTypes.number,
+    cellNumber: PropTypes.number
+}
 
 export default Cell;

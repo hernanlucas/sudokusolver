@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Cell from "./Cell";
 
 const BigCell = ({ bigCellNumber }) => {
@@ -11,5 +12,9 @@ const BigCell = ({ bigCellNumber }) => {
         </div>
     );
 };
+
+BigCell.propTypes = {
+    bigCellNumber: PropTypes.number
+}
 
 export default BigCell;
